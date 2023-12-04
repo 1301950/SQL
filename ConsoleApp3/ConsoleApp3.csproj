@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\WinFormsApp1\packages\Microsoft.ML.OnnxRuntime.1.13.1\build\netstandard2.0\Microsoft.ML.OnnxRuntime.props" Condition="Exists('..\WinFormsApp1\packages\Microsoft.ML.OnnxRuntime.1.13.1\build\netstandard2.0\Microsoft.ML.OnnxRuntime.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7BC2F31D-43F4-4DC0-9675-15D9CC7A7BA5}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ConsoleApp3</RootNamespace>
+    <AssemblyName>ConsoleApp3</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="XmpCore, Version=6.1.10.1, Culture=neutral, PublicKeyToken=961f4f366277b80e, processorArchitecture=MSIL">
+      <HintPath>..\WinFormsApp1 Monitor\packages\XmpCore.6.1.10.1\lib\net35\XmpCore.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\WinFormsApp1\packages\Tesseract.5.2.0\build\Tesseract.targets" Condition="Exists('..\WinFormsApp1\packages\Tesseract.5.2.0\build\Tesseract.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\WinFormsApp1\packages\Tesseract.5.2.0\build\Tesseract.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\WinFormsApp1\packages\Tesseract.5.2.0\build\Tesseract.targets'))" />
+    <Error Condition="!Exists('..\WinFormsApp1\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\WinFormsApp1\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets'))" />
+    <Error Condition="!Exists('..\WinFormsApp1\packages\IronOcr.2023.5.35\build\net\IronOcr.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\WinFormsApp1\packages\IronOcr.2023.5.35\build\net\IronOcr.targets'))" />
+    <Error Condition="!Exists('..\WinFormsApp1\packages\IronOcr.Languages.Financial.2020.11.2\build\IronOcr.Languages.Financial.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\WinFormsApp1\packages\IronOcr.Languages.Financial.2020.11.2\build\IronOcr.Languages.Financial.targets'))" />
+    <Error Condition="!Exists('..\WinFormsApp1\packages\Microsoft.ML.OnnxRuntime.Managed.1.13.1\build\netstandard2.0\Microsoft.ML.OnnxRuntime.Managed.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\WinFormsApp1\packages\Microsoft.ML.OnnxRuntime.Managed.1.13.1\build\netstandard2.0\Microsoft.ML.OnnxRuntime.Managed.targets'))" />
+    <Error Condition="!Exists('..\WinFormsApp1\packages\Microsoft.ML.OnnxRuntime.1.13.1\build\netstandard2.0\Microsoft.ML.OnnxRuntime.props')" Text="$([System.String]::Format('$(ErrorText)', '..\WinFormsApp1\packages\Microsoft.ML.OnnxRuntime.1.13.1\build\netstandard2.0\Microsoft.ML.OnnxRuntime.props'))" />
+    <Error Condition="!Exists('..\WinFormsApp1\packages\Microsoft.ML.OnnxRuntime.1.13.1\build\netstandard2.0\Microsoft.ML.OnnxRuntime.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\WinFormsApp1\packages\Microsoft.ML.OnnxRuntime.1.13.1\build\netstandard2.0\Microsoft.ML.OnnxRuntime.targets'))" />
+  </Target>
+  <Import Project="..\WinFormsApp1\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets" Condition="Exists('..\WinFormsApp1\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets')" />
+  <Import Project="..\WinFormsApp1\packages\IronOcr.2023.5.35\build\net\IronOcr.targets" Condition="Exists('..\WinFormsApp1\packages\IronOcr.2023.5.35\build\net\IronOcr.targets')" />
+  <Import Project="..\WinFormsApp1\packages\IronOcr.Languages.Financial.2020.11.2\build\IronOcr.Languages.Financial.targets" Condition="Exists('..\WinFormsApp1\packages\IronOcr.Languages.Financial.2020.11.2\build\IronOcr.Languages.Financial.targets')" />
+  <Import Project="..\WinFormsApp1\packages\Microsoft.ML.OnnxRuntime.Managed.1.13.1\build\netstandard2.0\Microsoft.ML.OnnxRuntime.Managed.targets" Condition="Exists('..\WinFormsApp1\packages\Microsoft.ML.OnnxRuntime.Managed.1.13.1\build\netstandard2.0\Microsoft.ML.OnnxRuntime.Managed.targets')" />
+  <Import Project="..\WinFormsApp1\packages\Microsoft.ML.OnnxRuntime.1.13.1\build\netstandard2.0\Microsoft.ML.OnnxRuntime.targets" Condition="Exists('..\WinFormsApp1\packages\Microsoft.ML.OnnxRuntime.1.13.1\build\netstandard2.0\Microsoft.ML.OnnxRuntime.targets')" />
+</Project>
